@@ -11,4 +11,4 @@ Athena Query Builder
 
 * Option 2: CURL script -> curl -X POST "http://localhost:8080/athena-query-generator/generate/athena/query?fromDate=2020-01-01&toDate=2020-04-14" -H "accept: */*" -H "Content-Type: application/json" -d "[ \"Nokia\", \"Tesla\"]"
 
-!(https://github.com/Fraser27/AthenaQueryBuilder/blob/master/src/main/resources/swaggersample.PNG?raw=true)
+!(https://github.com/Fraser27/AthenaQueryBuilder/blob/master/swaggersample.PNG?raw=true)
