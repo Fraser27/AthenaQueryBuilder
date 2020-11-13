@@ -15,20 +15,31 @@ package athena.query.builder;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * 
- * */
-import lombok.Data;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+ **/
+import java.util.List;
+import java.util.Map;
 
 /**
- * Load Configuration properties
+ * Class holds helper functions for re-usability.
  * 
  * @author fraser.sequeira
- * @date 17-Dec-2018
- */
-@Component
-@ConfigurationProperties("aws.athena")
-@Data
-public class AthenaProperties {
-	private String table;
+ * 
+ * */
+public class Utils {
+
+	public static boolean isEmpty(List list) {
+		return list == null || list.size() == 0;
+	}
+	
+	public static boolean isEmpty(Map map) {
+		return map == null || map.size() > 0;
+	}
+	
+	public static boolean notEmpty(List list) {
+		return list != null && list.size() > 0;
+	}
+	
+	public static boolean notEmpty(Map map) {
+		return map != null && map.size() > 0;
+	}
 }
