@@ -1,5 +1,21 @@
 package athena.query.builder;
-
+/*
+ * Copyright (C) 2020 ATHENA Query DSL AUTHOR; Fraser Sequeira
+ * All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ * */
 import java.time.LocalDate;
 import java.util.List;
 
@@ -49,6 +65,8 @@ public class StockQueryBuilder {
 		log.debug("action=get_query_string, from_date=" + fromDate.toString() + " , to_date_time=" + toDate);
 		SQLQuery<?> query = queryBuilder.getAthenaSQLQueryInstance();
 		PathBuilder<StockEntity> entity = new PathBuilder<StockEntity>(StockEntity.class, athenaProperties.getTable());
+		// Append partition keys to where clause of athena Query
+		queryBuilder.applyDateFiltersToQuery(fromDate, toDate, query, entity.get("year"), entity.get("month"), entity.get("day"));
 		// Add brands
 		query.where(entity.get(StockEntity.BRAND_NAME).in(brands));
 		// Add Product Filters

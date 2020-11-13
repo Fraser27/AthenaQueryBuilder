@@ -12,3 +12,6 @@ Athena Query Builder
 * Option 2: CURL script -> curl -X POST "http://localhost:8080/athena-query-generator/generate/athena/query?fromDate=2020-01-01&toDate=2020-04-14" -H "accept: */*" -H "Content-Type: application/json" -d "[ \"Nokia\", \"Tesla\"]"
 
 ![Swagger](https://github.com/Fraser27/AthenaQueryBuilder/blob/master/src/main/resources/swaggersample.PNG?raw=true)
+
+** version 2.0.0
+      Support addition of date partitions in an Athena Query using QueryDSL.
