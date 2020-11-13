@@ -6,7 +6,7 @@
 
 	<groupId>org.aws.athena</groupId>
 	<artifactId>athena-query-builder</artifactId>
-	<version>1.0.14</version>
+	<version>2.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>Athena-Query-Builder</name>

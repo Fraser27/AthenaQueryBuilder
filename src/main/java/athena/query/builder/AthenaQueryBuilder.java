@@ -356,9 +356,7 @@ public final class AthenaQueryBuilder {
 
 		String fromMonthString = startMonth < 10 ? "0" + startMonth : String.valueOf(startMonth);
 		String toMonthString = endMonth < 10 ? "0" + endMonth : String.valueOf(endMonth);
-
 		log.debug("action=get_filters_spanning_years, from_month=" + fromMonthString + ", to_month=" + toMonthString);
-
 		// If the month is selected is from 1st of Jan add the whole year as a key do
 		// not drill down to month level
 		if (startMonth == Month.JANUARY.getValue() && dayOfStartMonth == firstDayOfStartMonth) {
